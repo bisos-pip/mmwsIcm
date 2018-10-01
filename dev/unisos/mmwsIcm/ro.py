@@ -144,12 +144,13 @@ This module is part of BISOS and its primary documentation is in  http://www.by-
         moduleStatus="""
 *       [[elisp:(org-show-subtree)][|=]]  [[elisp:(org-cycle)][| *Status:* | ]]
 **  [[elisp:(org-cycle)][| ]]  [Info]          :: *[Current-Info:]* Status/Maintenance -- General TODO List [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  ICM Common       :: Add -i cmndFpUpdate .  and -i cmndFpShow . [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Add -p headers=fileName  [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Auto generate cmndsList with no args  [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Instead of parName=parNameVALUE do parName=partType (int64) [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  rinvokerXxxx     :: Create a thin template for using wsIcmInvoker [[elisp:(org-cycle)][| ]]
-
+** TODO [[elisp:(org-cycle)][| ]]  opExpections.py     :: Create a new module. Take Ro_OpExpectationsList into that module  [[elisp:(org-cycle)][| ]]
+** TODO [[elisp:(org-cycle)][| ]]  opExpections.py     :: Recognize the following 5 types of operatios  [[elisp:(org-cycle)][| ]]
+   1) remSvcOp   -- Uses the SvcSpec (Swagger)
+   2) remRawOp   -- Direct requests (no swagger)
+   3) directIcmOp  -- An Operationized Icm Cmnd -- not remote
+   4) remIcmOp  -- An Icm remSvcOp
+   5) directRawOp  -- A raw python function invokation
 **      [End-Of-Status]
 """
 

@@ -1,0 +1,2 @@
+WS-Invoker-ICM Library: Interactive Command Modules (ICM) -- A Swagger (Open-API) specification is digested with bravado and is mapped to command line with ICM.
+

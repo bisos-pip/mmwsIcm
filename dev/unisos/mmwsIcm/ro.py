@@ -74,16 +74,7 @@ G.icmCmndsLibsAppend = __file__
 
 ####+END:
 
-
 import pprint
-#import datetime
-#import random
-#import struct
-#import sys
-#import json
-#import base64
-
-#import jwt
 
 #from unisos.mmwsIcm import wsInvokerIcm
 import wsInvokerIcm
@@ -144,13 +135,12 @@ This module is part of BISOS and its primary documentation is in  http://www.by-
         moduleStatus="""
 *       [[elisp:(org-show-subtree)][|=]]  [[elisp:(org-cycle)][| *Status:* | ]]
 **  [[elisp:(org-cycle)][| ]]  [Info]          :: *[Current-Info:]* Status/Maintenance -- General TODO List [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  opExpections.py     :: Create a new module. Take Ro_OpExpectationsList into that module  [[elisp:(org-cycle)][| ]]
-** TODO [[elisp:(org-cycle)][| ]]  opExpections.py     :: Recognize the following 5 types of operatios  [[elisp:(org-cycle)][| ]]
-   1) remSvcOp   -- Uses the SvcSpec (Swagger)
-   2) remRawOp   -- Direct requests (no swagger)
-   3) directIcmOp  -- An Operationized Icm Cmnd -- not remote
-   4) remIcmOp  -- An Icm remSvcOp
-   5) directRawOp  -- A raw python function invokation
+** TODO [[elisp:(org-cycle)][| ]]  ICM Common       :: Add -i cmndFpUpdate .  and -i cmndFpShow . [[elisp:(org-cycle)][| ]]
+** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Add -p headers=fileName  [[elisp:(org-cycle)][| ]]
+** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Auto generate cmndsList with no args  [[elisp:(org-cycle)][| ]]
+** TODO [[elisp:(org-cycle)][| ]]  wsIcmInvoker     :: Instead of parName=parNameVALUE do parName=partType (int64) [[elisp:(org-cycle)][| ]]
+** TODO [[elisp:(org-cycle)][| ]]  rinvokerXxxx     :: Create a thin template for using wsIcmInvoker [[elisp:(org-cycle)][| ]]
+
 **      [End-Of-Status]
 """
 
@@ -227,8 +217,8 @@ def commonParamsSpecify(
 *  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]]  Func-anyOrNone :: /examples_remoteOperations/ retType=bool argsList=(roListLoadFile roExpectListLoadFile)  [[elisp:(org-cycle)][| ]]
 """
 def examples_remoteOperations(
-    roListLoadFile,
-    roExpectListLoadFile,
+    roListLoadFiles,
+    roExpectListLoadFiles,
 ):
 ####+END:
     """."""
@@ -238,25 +228,26 @@ def examples_remoteOperations(
     def execLineEx(cmndStr): icm.ex_gExecMenuItem(execLine=cmndStr)
 
     icm.cmndExampleMenuChapter('/Remote Operation Scenario Files/ *roListInv*')
+        
+    if roListLoadFiles:
+        loadOpScenariosArgs=""
+        for each in roListLoadFiles: 
+            loadOpScenariosArgs="""{loadOpScenariosArgs} --load {each}""".format(
+                loadOpScenariosArgs=loadOpScenariosArgs,
+                each=each,)
+        thisCmndAction= " -i roListInv"
+        icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
+                                verbosity='none')                            
 
-    loadOpScenariosArgs=""" --load {}""".format(roListLoadFile)
-
-    thisCmndAction= " -i roListInv"
-    
-    icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
-                            verbosity='none')                            
-    icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
-                            verbosity='full')
-
-    loadOpScenariosArgs=""" --load {}""".format(roExpectListLoadFile)
-
-    thisCmndAction= " -i roListExpectations"
-    
-    icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
-                            verbosity='none')                            
-    icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
-                            verbosity='full')                            
-    
+    if roExpectListLoadFiles:
+        loadOpScenariosArgs=""
+        for each in roExpectListLoadFiles: 
+            loadOpScenariosArgs="""{loadOpScenariosArgs} --load {each}""".format(
+                loadOpScenariosArgs=loadOpScenariosArgs,
+                each=each,)
+        thisCmndAction= " -i roListExpectations"
+        icm.cmndExampleMenuItem(format(loadOpScenariosArgs + thisCmndAction),
+                                verbosity='none')                            
 
 
 ####+BEGIN: bx:icm:python:section :title "ICM Commands"
@@ -367,7 +358,6 @@ class roListExpectations(icm.Cmnd):
 
         roExpectationsList = Ro_OpExpectationsList().opExpectationsListGet()
 
-        print(roExpectationsList)
 
         @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
         def roExpectationsListProc(roExpectationsList):
@@ -382,6 +372,7 @@ class roListExpectations(icm.Cmnd):
                     thisPreInvokeCallable(thisRoExpecation)
 
                 invokedOp = wsInvokerIcm.ro_opInvokeCapture(thisRo)
+                opReport(invokedOp)                
 
                 for thisPostInvokeCallable in thisRoExpecation.postInvokeCallables:
                     thisPostInvokeCallable(thisRoExpecation)
@@ -667,11 +658,10 @@ def opReport(
 ####+END:
     pp = pprint.PrettyPrinter(indent=4)
 
-    icm.ANN_write("""* ->:: @{perfSap}@{resource}@{opName} with {params}""".format(
+    icm.ANN_write("""* ->:: @{perfSap}@{resource}@{opName}""".format(
         perfSap=op.perfSap,
         resource=op.resource,
         opName=op.opName,
-        params="bodyParams",
     ))
 
     params = op.roParams    
@@ -680,22 +670,45 @@ def opReport(
         svcSpec=op.svcSpec,
     ))
 
-    icm.ANN_write("** <-:: Body Params: \n{bodyParams}".format(
-        bodyParams=pp.pformat(params.bodyParams)))
+    newLine = "\n";
+    if params.headerParams == None: newLine = "";
         
-    results = op.roResults        
+    icm.ANN_write("** ->:: Header Params: {newLine}{headerParams}".format(
+        newLine=newLine, headerParams=pp.pformat(params.headerParams)))
+
+    newLine = "\n";
+    if params.urlParams == None: newLine = "";
         
-    icm.ANN_write("""* <-:: {httpResultCode} -- {httpResultText} -- {resultType}""".format(
+    icm.ANN_write("** ->:: Url Params: {newLine}{urlParams}".format(
+        newLine=newLine, urlParams=pp.pformat(params.urlParams)))
+
+    newLine = "\n";
+    if params.bodyParams == None: newLine = "";
+        
+    icm.ANN_write("** ->:: Body Params: {newLine}{bodyParams}".format(
+        newLine=newLine, bodyParams=pp.pformat(params.bodyParams)))
+
+    
+    results = op.roResults
+
+    if results.opResults:
+        resultsFormat="json"
+    else:
+        resultsFormat="empty"
+        
+    icm.ANN_write("""* <-:: httpStatus={httpResultCode} -- httpText={httpResultText} -- resultsFormat={resultsFormat}""".format(
         httpResultCode=results.httpResultCode,
         httpResultText=results.httpResultText,
-        resultType="json",
+        resultsFormat=resultsFormat,
     ))
 
-    icm.ANN_write("** <-:: Operation Result: \n{result}".format(
-        result=pp.pformat(results.opResults)))
+    newLine = "\n";
+    if results.opResults == None: newLine = "";
+        
+    icm.ANN_write("** <-:: Operation Result: {newLine}{result}".format(
+        newLine=newLine, result=pp.pformat(results.opResults)))
     
-
-    icm.ANN_write("""* ==:: basicPass or failed or Verified""")
+    #icm.ANN_write("""* ==:: basicPass or failed or Verified""")
         
         
              

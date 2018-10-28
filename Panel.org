@@ -20,6 +20,7 @@
 ####+BEGIN: bx:dblock:global:file-insert :file "/libre/ByStar/InitialTemplates/bxt/starts/bxtProc/auxNode/commonProcTop.org"
 *  [[elisp:(beginning-of-buffer)][Top]] #####################  [[elisp:(delete-other-windows)][(1)]]               /*  BxTree Common Object Panel (objectType=data) */
 *      ================
+*  [[elisp:(org-cycle)][| ]]  Related BxPanels   ::  [[elisp:(find-file "/libre/ByStar/InitialTemplates/activeDocs/bxServices/servicesManage/bxSupervision/systemd/fullUsagePanel-en.org")][SystemD]] || [[file:/libre/ByStar/InitialTemplates/activeDocs/bxPlatform/baseDirs/fullUsagePanel-en.org][BaseDirs]] || [[file:/libre/ByStar/InitialTemplates/activeDocs/bxPlatform/baseDirs/disk/fullUsagePanel-en.org][Disks Management]] || [[file:/libre/ByStar/InitialTemplates/activeDocs/bxPlatform/baseDirs/nfs/fullUsagePanel-en.org][NFS]] || [[file:/libre/ByStar/InitialTemplates/activeDocs/bxPlatform/baseDirs/samba/fullUsagePanel-en.org][SAMBA]]   [[elisp:(org-cycle)][| ]]
 *      ================
 
 ####+END:

@@ -17,7 +17,7 @@ def longDescription():
 
 
 #__version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.3'
+__version__ = '0.8'
 
 
 requires = [
@@ -32,11 +32,14 @@ requires = [
 #print('Setting up under python version %s' % sys.version)
 #print('Requirements: %s' % ','.join(requires))
 
+
 scripts = [
     "./bin/rinvoker.py",
     "./bin/wsInvokerIcmExamples.py",
     "./bin/bearerTokenProc.py",
     "./bin/mmwsBaseManage.py",
+    "./bin/opScnPetstore.py",
+    "./bin/rinvokerPetstore.py",
 ]
 
 

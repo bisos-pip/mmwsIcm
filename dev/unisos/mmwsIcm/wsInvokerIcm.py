@@ -5,7 +5,7 @@
 
 ####+BEGIN: bx:icm:python:top-of-file :partof "bystar" :copyleft "halaal+minimal"
 """
-*  This file:/de/bx/nne/dev-py/pypi/pkgs/unisos/wsInvokerIcm/dev/unisos/wsInvokerIcm/newLibIcm.py :: [[elisp:(org-cycle)][| ]]
+*  This file:/de/bx/nne/dev-py/pypi/pkgs/unisos/mmwsIcm/dev/unisos/mmwsIcm/wsInvokerIcm.py :: [[elisp:(org-cycle)][| ]]
  is part of The Libre-Halaal ByStar Digital Ecosystem. http://www.by-star.net
  *CopyLeft*  This Software is a Libre-Halaal Poly-Existential. See http://www.freeprotocols.org
  A Python Interactively Command Module (PyICM). Part Of ByStar.
@@ -24,7 +24,7 @@ __libName__ = "wsInvokerIcm"
 ####+END:
 
 ####+BEGIN: bx:global:timestamp:version-py :style "date"
-__version__ = "201807115259"
+__version__ = "201810164344"
 ####+END:
 
 ####+BEGIN: bx:global:icm:status-py :status "Production"
@@ -68,7 +68,7 @@ icmInfo = {
 
 ####+BEGIN: bx:dblock:python:icmItem :itemType "=Imports=" :itemTitle "*IMPORTS*"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || =Imports=      :: *IMPORTS*  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || =Imports=      :: *IMPORTS*  [[elisp:(org-cycle)][| ]]
 """
 ####+END:
 
@@ -123,7 +123,7 @@ import ast
 
 ####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "icmBegin_libOverview" :parsMand "" :parsOpt "" :argsMin "0" :argsMax "3" :asFunc "" :interactiveP ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /icmBegin_libOverview/ parsMand= parsOpt= argsMin=0 argsMax=3 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || ICM-Cmnd       :: /icmBegin_libOverview/ parsMand= parsOpt= argsMin=0 argsMax=3 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
 """
 class icmBegin_libOverview(icm.Cmnd):
     cmndParamsMandatory = [ ]
@@ -236,7 +236,7 @@ class icmBegin_libOverview(icm.Cmnd):
 
 ####+BEGIN: bx:icm:python:func :funcName "commonParamsSpecify" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "icmParams"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /commonParamsSpecify/ retType=bool argsList=(icmParams)  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /commonParamsSpecify/ retType=bool argsList=(icmParams)  [[elisp:(org-cycle)][| ]]
 """
 def commonParamsSpecify(
     icmParams,
@@ -306,7 +306,7 @@ def commonParamsSpecify(
 
 ####+BEGIN: bx:icm:python:func :funcName "examples_commonInvoker" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "svcSpecUrl svcSpecFile perfSap headers"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /examples_commonInvoker/ retType=bool argsList=(svcSpecUrl svcSpecFile perfSap headers)  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /examples_commonInvoker/ retType=bool argsList=(svcSpecUrl svcSpecFile perfSap headers)  [[elisp:(org-cycle)][| ]]
 """
 def examples_commonInvoker(
     svcSpecUrl,
@@ -338,7 +338,7 @@ def examples_commonInvoker(
         headersParam(cps, headers)        
         cmndArgs = "";
         menuItem(verbosity='none')
-        icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='full')
+        #icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='full')
 
         cps = cpsInit();
         cps['svcSpec'] = svcSpecUrl
@@ -351,12 +351,12 @@ def examples_commonInvoker(
 
         icm.cmndExampleMenuSection('* -i svcOpsList  svcSpecFile*')        
         
-        cps = cpsInit();
-        cps['svcSpec'] = svcSpecFile
-        headersParam(cps, headers)                        
-        cmndArgs = "";
-        menuItem(verbosity='none')
-        icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='full')
+        # cps = cpsInit();
+        # cps['svcSpec'] = svcSpecFile
+        # headersParam(cps, headers)                        
+        # cmndArgs = "";
+        # menuItem(verbosity='none')
+        # #icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity='full')
 
         cps = cpsInit();
         cps['svcSpec'] = svcSpecFile
@@ -377,7 +377,7 @@ def examples_commonInvoker(
 
 ####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "svcOpsList" :parsMand "svcSpec" :parsOpt "perfSap headers" :argsMin "0" :argsMax "1" :asFunc "" :interactiveP ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /svcOpsList/ parsMand=svcSpec parsOpt=perfSap headers argsMin=0 argsMax=1 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || ICM-Cmnd       :: /svcOpsList/ parsMand=svcSpec parsOpt=perfSap headers argsMin=0 argsMax=1 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
 """
 class svcOpsList(icm.Cmnd):
     cmndParamsMandatory = [ 'svcSpec', ]
@@ -440,7 +440,7 @@ class svcOpsList(icm.Cmnd):
 
 ####+BEGIN: bx:icm:python:cmnd:classHead :cmndName "rinvoke" :parsMand "svcSpec resource opName" :parsOpt "perfSap headers" :argsMin "0" :argsMax "999" :asFunc "" :interactiveP ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || ICM-Cmnd       :: /rinvoke/ parsMand=svcSpec resource opName parsOpt=perfSap headers argsMin=0 argsMax=999 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || ICM-Cmnd       :: /rinvoke/ parsMand=svcSpec resource opName parsOpt=perfSap headers argsMin=0 argsMax=999 asFunc= interactive=  [[elisp:(org-cycle)][| ]]
 """
 class rinvoke(icm.Cmnd):
     cmndParamsMandatory = [ 'svcSpec', 'resource', 'opName', ]
@@ -493,7 +493,12 @@ class rinvoke(icm.Cmnd):
         pp = pprint.PrettyPrinter(indent=4)
         icm.TM_here("{}".format(pp.pformat(loadedSvcSpec)))
 
-        op = getOperationWithResourceAndOpName(loadedSvcSpec, origin_url, resource, opName)
+        op = getOperationWithResourceAndOpName(
+            loadedSvcSpec,
+            origin_url,
+            resource,
+            opName
+            )
 
         
         opInvokeEvalStr="opInvoke(headers, op, "
@@ -526,7 +531,7 @@ class rinvoke(icm.Cmnd):
 
 ####+BEGIN: bx:icm:python:method :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList ""
     """
-**  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Method-anyOrNone :: /cmndArgsSpec/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
+**  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Method-anyOrNone :: /cmndArgsSpec/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
 """
     @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
     def cmndArgsSpec(self):
@@ -555,7 +560,7 @@ class rinvoke(icm.Cmnd):
 
 ####+BEGIN: bx:icm:python:func :funcName "loggingSetup" :funcType "void" :retType "bool" :deco "default" :argsList ""
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-void      :: /loggingSetup/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-void      :: /loggingSetup/ retType=bool argsList=nil deco=default  [[elisp:(org-cycle)][| ]]
 """
 @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
 def loggingSetup():
@@ -584,7 +589,7 @@ def loggingSetup():
     
 ####+BEGIN: bx:icm:python:func :funcName "loadSvcSpec" :funcType "anyOrNone" :retType "bool" :deco "default" :argsList "spec perfSapUrl"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /loadSvcSpec/ retType=bool argsList=(spec perfSapUrl) deco=default  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /loadSvcSpec/ retType=bool argsList=(spec perfSapUrl) deco=default  [[elisp:(org-cycle)][| ]]
 """
 @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
 def loadSvcSpec(
@@ -615,11 +620,12 @@ def loadSvcSpec(
     if perfSapUrl:
         perfSapUrlObj = urlparse(perfSapUrl)
 
-        icm.LOG_here("perfSap: host={host} port={port} path={path}".format(
-            host = perfSapUrlObj.hostname,
-            port = perfSapUrlObj.port,
-            path = perfSapUrlObj.path,
-        ))
+        # NOTYET, levae as LOG
+        # icm.LOG_here("perfSap: host={host} port={port} path={path}".format(
+        #     host = perfSapUrlObj.hostname,
+        #     port = perfSapUrlObj.port,
+        #     path = perfSapUrlObj.path,
+        # ))
     
         spec['host'] = '{}:{}'.format(perfSapUrlObj.hostname, perfSapUrlObj.port)
 
@@ -632,7 +638,7 @@ def loadSvcSpec(
 
 ####+BEGIN: bx:icm:python:func :funcName "processSvcSpec" :funcType "anyOrNone" :retType "bool" :deco "default" :argsList "spec origin_url perfSap headers svcSpec"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /processSvcSpec/ retType=bool argsList=(spec origin_url perfSap headers svcSpec) deco=default  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /processSvcSpec/ retType=bool argsList=(spec origin_url perfSap headers svcSpec) deco=default  [[elisp:(org-cycle)][| ]]
 """
 @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
 def processSvcSpec(
@@ -683,8 +689,8 @@ def processSvcSpec(
                 #print(param.name)
                 #print(param.type)                
 
-            #print("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(
-            icm.OUT_note("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(
+            #icm.OUT_note("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(
+            print("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(            
                 thisIcm=thisIcm,
                 svcSpec=svcSpecStr,
                 perfSapStr=perfSapStr,
@@ -698,7 +704,7 @@ def processSvcSpec(
                 
 ####+BEGIN: bx:icm:python:func :funcName "getOperationWithResourceAndOpName" :funcType "anyOrNone" :retType "bool" :deco "default" :argsList "spec origin_url resource opName"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /getOperationWithResourceAndOpName/ retType=bool argsList=(spec origin_url resource opName) deco=default  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /getOperationWithResourceAndOpName/ retType=bool argsList=(spec origin_url resource opName) deco=default  [[elisp:(org-cycle)][| ]]
 """
 @icm.subjectToTracking(fnLoc=True, fnEntry=True, fnExit=True)
 def getOperationWithResourceAndOpName(
@@ -712,7 +718,7 @@ def getOperationWithResourceAndOpName(
 
     pp = pprint.PrettyPrinter(indent=4)
 
-    spec = Spec.from_dict(spec, origin_url=origin_url)
+    spec = Spec.from_dict(spec, origin_url=origin_url)        
     #pp.pprint(spec)
     
     for res_name, res in spec.resources.items():
@@ -733,7 +739,7 @@ def getOperationWithResourceAndOpName(
 
 ####+BEGIN: bx:icm:python:func :funcName "get_command_name" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "op"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /get_command_name/ retType=bool argsList=(op)  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /get_command_name/ retType=bool argsList=(op)  [[elisp:(org-cycle)][| ]]
 """
 def get_command_name(
     op,
@@ -759,6 +765,7 @@ def opInvoke(
     **kwargs
 ):
 ####+END:
+    """ NOTYET, Important, opInvoke should be layered on  top of opInvokeCapture """
 
     pp = pprint.PrettyPrinter(indent=4)
 
@@ -917,7 +924,7 @@ def ro_opInvokeCapture(
 
     pp = pprint.PrettyPrinter(indent=4)    
 
-    icm.TM_here("svcSpec={svcSpec} -- perfSap={perfSap}".format(svcSpec=roOp.svcSpec, perfSap=roOp.perfSap))
+    #icm.TM_here("svcSpec={svcSpec} -- perfSap={perfSap}".format(svcSpec=roOp.svcSpec, perfSap=roOp.perfSap))
 
     loadedSvcSpec, origin_url = loadSvcSpec(roOp.svcSpec, roOp.perfSap)
 
@@ -925,8 +932,10 @@ def ro_opInvokeCapture(
         #origin_url = "http://localhost:8080"
         origin_url = roOp.perfSap
 
-    pp = pprint.PrettyPrinter(indent=4)
-    icm.TM_here("{}".format(pp.pformat(loadedSvcSpec)))
+    #
+    # NOTYET LOG level changes here
+    #
+    #icm.TM_here("{}".format(pp.pformat(loadedSvcSpec)))
 
     opBravadoObj = getOperationWithResourceAndOpName(
         loadedSvcSpec,
@@ -935,62 +944,107 @@ def ro_opInvokeCapture(
         roOp.opName,
         )
 
+    
     requestOptions = dict()
-
-    # bodyDict = dict()
-    # bodyDict['accessKey'] = "SomeAccess"
-    # bodyDict['secretKey'] = "SomeSecret"
 
     params = roOp.roParams
 
     headerParams = params.headerParams
-
     if headerParams:
         requestOptions["headers"] = headerParams
 
-    bodyParams = params.bodyParams
+    urlParams = params.urlParams
+    if urlParams == None:
+        urlParams = dict()
 
+    bodyParams = params.bodyParams
     if bodyParams:
+        #
+        # With ** we achieve kwargs
+        #
+        #  func(**{'type':'Event'}) is equivalent to func(type='Event')
+        #
         request = construct_request(
             opBravadoObj,
             requestOptions,
             body=bodyParams,
+            **urlParams
             )
     else:
         request = construct_request(
             opBravadoObj,
             requestOptions,
+            **urlParams           
             )
-
         
     icm.LOG_here("request={request}".format(request=pp.pformat(request)))
 
     c = RequestsClient()
 
-    future = c.request(request)
-    
-    result = future.result()
 
-    roResults = ro.Ro_Results(
-        httpResultCode=str(result),
-        httpResultText=str(result),
-        opResults=result.json(),
-        opResultHeaders=result._delegate.headers,
-        )
+    #
+    # This is where the invoke request goes out
+    #
+    future = c.request(request)
+
+    #
+    # This where the invoke response comes in
+    #
+
+    opResults = {}
+    try:
+        result = future.result()
+    except Exception as e:            
+        icm.EH_critical_exception(e)
+        opResults = None
+
+        roResults = ro.Ro_Results(
+            httpResultCode=500,    # type=int
+            httpResultText="Internal Server Error",         # type=str
+            opResults=opResults,
+            opResultHeaders=None,
+            )
+        
+    if opResults != None:
+
+        #
+        # result
+        #
+        # 2018-10-01 -- https://github.com/Yelp/bravado/blob/master/bravado/requests_client.py
+        # class RequestsResponseAdapter(IncomingResponse):
+        #
+        # type(result._delegate.text) = unicode
+        # type(result._delegate.content) = str
+        #
+
+
+        opResults=None    
+
+        if result._delegate.content:
+            try:
+                opResults=result.json()
+            except Exception as e:            
+                icm.EH_critical_exception(e)
+                opResults=None
+
+        roResults = ro.Ro_Results(
+            httpResultCode=result._delegate.status_code,    # type=int
+            httpResultText=result._delegate.reason,         # type=str
+            opResults=opResults,
+            opResultHeaders=result._delegate.headers,
+            )
+
+        icm.LOG_here("RESPONSE: status_code={status_code} -- reason={reason} -- text={text}".format(
+            status_code=result._delegate.status_code,
+            reason=result._delegate.reason,        
+            text=result._delegate.text,
+            ))
+
+        icm.LOG_here("RESPONSE: responseHeaders: {headers}".format(
+            headers=pp.pformat(result._delegate.headers)))
 
     roOp.roResults = roResults
-
-    #print(roOp.roResults)
-
-    icm.LOG_here("responseHeaders: {headers}".format(
-        headers=pp.pformat(result._delegate.headers)))
-
-    #icm.ANN_write("Operation Status: {result}".format(result=result))
-
-    #icm.ANN_write("Operation Result: {result}".format(
-    #    result=pp.pformat(result.json()))
-    #)
-
+    
     return roOp
 
 
@@ -1047,7 +1101,7 @@ def pretty_print_POST(req):
     
 ####+BEGIN: bx:icm:python:func :funcName "sanitize_spec" :funcType "anyOrNone" :retType "bool" :deco "" :argsList "spec"
 """
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(org-tree-to-indirect-buffer)][|>]] [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Func-anyOrNone :: /sanitize_spec/ retType=bool argsList=(spec)  [[elisp:(org-cycle)][| ]]
+*  [[elisp:(org-cycle)][| ]] [[elisp:(org-show-subtree)][|=]] [[elisp:(show-children 10)][|V]] [[elisp:(bx:orgm:indirectBufOther)][|>]] [[elisp:(bx:orgm:indirectBufMain)][|I]] [[elisp:(blee:ppmm:org-mode-toggle)][|N]] [[elisp:(org-top-overview)][|O]] [[elisp:(progn (org-shifttab) (org-content))][|C]] [[elisp:(delete-other-windows)][|1]] || Func-anyOrNone :: /sanitize_spec/ retType=bool argsList=(spec)  [[elisp:(org-cycle)][| ]]
 """
 def sanitize_spec(
     spec,

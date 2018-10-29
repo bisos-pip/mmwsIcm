@@ -23,15 +23,15 @@ Documentation
 
 Part of ByStar Digital Ecosystem http://www.by-star.net.
 
-Remote Operations Interactive Command Modules (RO-ICM)
-Best Current (2018) Practices For Web Services Development
-    : http://www.by-star.net/PLPC/180056
+Remote Operations Interactive Command Modules (RO-ICM) – Best Current
+(2018) Practices For Web Services Development
+    http://www.by-star.net/PLPC/180056
 
 A Generalized Swagger (Open-API) Centered Web Services Testing Framework
-    : http://www.by-star.net/PLPC/180057
+    http://www.by-star.net/PLPC/180057
 
 Interactive Command Modules (ICM) and Players
-    : http://www.by-star.net/PLPC/180050
+    http://www.by-star.net/PLPC/180050
 
 On the invoker side, a Swagger (Open-API) specification is digested with
 bravado and is mapped to command line with ICM.
@@ -45,13 +45,14 @@ Binaries
 ========
 
 “./bin/rinvoker.py”
-    :
+    A starting point template to be customized for your own swagger
+    file.
 
 “./bin/rinvokerPetstore.py”
-    :
+    Provides a list of Petstore example command line invokations.
 
 “./bin/opScnPetstore.py”
-    :
+    Points to various scenario files for the Petstore example.
 
 Example Usage
 =============

@@ -189,7 +189,13 @@ author/maintainer \\
 
 Part of ByStar Digital Ecosystem \url{http://www.by-star.net}.
 
-This module's primary documentation is in  \url{http://www.by-star.net/PLPC/180047}
+%This module's primary documentation is in  \url{http://www.by-star.net/PLPC/180047}
+
+\begin{description}
+\item[Remote Operations Interactive Command Modules (RO-ICM)\\Best Current (2018) Practices For Web Services Development]: \url{http://www.by-star.net/PLPC/180056}
+\item[A Generalized Swagger (Open-API) Centered Web Services Testing Framework]: \url{http://www.by-star.net/PLPC/180057}
+\item[Interactive Command Modules (ICM) and Players]: \url{http://www.by-star.net/PLPC/180050}
+\end{description}
 
 On the invoker side, a Swagger (Open-API) specification is
 digested with bravado and is mapped to command line with ICM.
@@ -199,12 +205,25 @@ the code-generator to create a consistent starting point.
 
 An ICM can be auto-converted to become a web service.
 
+\section{Binaries}
+
+\begin{description}
+\item["./bin/rinvoker.py"]: 
+\item["./bin/rinvokerPetstore.py"]: 
+\item["./bin/opScnPetstore.py"]:
+\end{description}
+
+
 
 \section{Example Usage}
 
 \begin{verbatim}
-from  mmwsIcm import rinvoker
+from unisos.mmwsIcm import wsInvokerIcm
+from unisos.mmwsIcm import ro
 \end{verbatim}
+
+
+
 
 %%%#+BEGIN: bx:dblock:lcnt:main-end :class "memo" :langs "en+fa"
 \begin{comment}

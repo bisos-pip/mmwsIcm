@@ -17,7 +17,7 @@ def longDescription():
 
 
 #__version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.8'
+__version__ = '0.9'
 
 
 requires = [

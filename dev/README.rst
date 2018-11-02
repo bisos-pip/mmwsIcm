@@ -10,6 +10,19 @@ MM-WS-ICM Library: Machine-to-Machine Web Service Interactive Command
 Modules (ICM) – A set of facilities for developing Performer and Invoker
 web-services based on Swagger (Open-API) specifications through ICMs.
 
+Sources And Packages
+====================
+
+Sources Repositories
+--------------------
+
+-  GitHub: https://github.com/bisos-pip/mmwsIcm
+
+Packages Repositories
+---------------------
+
+-  PyPi: https://pypi.org/project/unisos.mmwsIcm
+
 Support
 =======
 
@@ -57,6 +70,25 @@ Binaries
 
 Example Usage
 =============
+
+Invoked (Client) Development
+----------------------------
+
+::
+
+    from unisos.mmwsIcm import wsInvokerIcm
+    from unisos.mmwsIcm import ro
+
+Testing Framework
+-----------------
+
+::
+
+    from unisos.mmwsIcm import wsInvokerIcm
+    from unisos.mmwsIcm import ro
+
+Performer (Server) Development
+------------------------------
 
 ::
 

@@ -24,6 +24,7 @@ requires = [
     'enum34',
     'unisos.ucf',
     'unisos.icm',
+    'unisos.common',    
     'blee.icmPlayer',
     'bravado',
     'PyJWT',  # Needed for bearerToken

@@ -1,2 +1,2 @@
-WS-Invoker-ICM Library: Interactive Command Modules (ICM) -- A Swagger (Open-API) specification is digested with bravado and is mapped to command line with ICM.
-
+MM-WS-ICM Library: Machine-to-Machine Web Service Interactive Command Modules (ICM) -- A
+set of facilities for developing Performer and Invoker web-services based on Swagger (Open-API) specifications through ICMs.

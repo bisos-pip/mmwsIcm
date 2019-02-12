@@ -30,6 +30,7 @@ requires = [
     'blee.platform',
     'pyjwt',
     'bravado',
+    'PyJWT',  # Needed for bearerToken
 ]
 
 

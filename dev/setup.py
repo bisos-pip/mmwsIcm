@@ -17,7 +17,7 @@ def longDescription():
 
 
 #__version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.16'
+__version__ = '0.17'
 
 
 requires = [
@@ -26,6 +26,9 @@ requires = [
     'unisos.icm',
     'unisos.common',    
     'blee.icmPlayer',
+    'blee.common',
+    'blee.platform',
+    'pyjwt',
     'bravado',
 ]
 

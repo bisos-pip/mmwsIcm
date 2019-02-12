@@ -59,7 +59,7 @@ icmInfo = {
 ####+END:
 
 import sys
-import os
+#import os
 
 import collections
 
@@ -297,16 +297,11 @@ class examples(icm.Cmnd):
 
 ####+END:
         def cpsInit(): return collections.OrderedDict()
-        def menuItem(verbosity): icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity=verbosity) # 'little' or 'none'
+        #def menuItem(verbosity): icm.ex_gCmndMenuItem(cmndName, cps, cmndArgs, verbosity=verbosity) # 'little' or 'none'
         def execLineEx(cmndStr): icm.ex_gExecMenuItem(execLine=cmndStr)
 
         ##### IMPORTANT PARAMS SPECIFICATIONS BEGIN
 
-        svcSpecUrl="http://localhost:8080/swagger.json"
-        svcSpecFile="./swagger.json"        
-        perfSap="http://localhost:8080"
-        headersFileName = "./bearerToken.headers"
-        includeOpsListInExamples = False
         
         ##### IMPORTANT PARAMS SPECIFICATIONS END        
         

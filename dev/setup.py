@@ -17,7 +17,7 @@ def longDescription():
 
 
 #__version__ = get_version('unisos/icm/__init__.py')
-__version__ = '0.17'
+__version__ = '0.19'
 
 
 requires = [
@@ -26,8 +26,8 @@ requires = [
     'unisos.icm',
     'unisos.common',    
     'blee.icmPlayer',
-    'blee.common',
-    'blee.platform',
+    'bisos.common',
+    'bisos.platform',
     'pyjwt',
     'bravado',
     'PyJWT',  # Needed for bearerToken

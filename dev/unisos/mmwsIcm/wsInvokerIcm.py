@@ -603,7 +603,7 @@ def loadSvcSpec(
     if isinstance(spec, str):
         if spec.startswith('https://') or spec.startswith('http://'):
             origin_url = spec
-            r = requests.get(spec)
+            r = requests.get(spec, verify=False)
             r.raise_for_status()
             spec = yaml.safe_load(r.text)
         else:
@@ -897,17 +897,22 @@ def opInvoke(
     c = RequestsClient()
 
     future = c.request(request)
-    
-    result = future.result()
 
-    icm.LOG_here("responseHeaders: {headers}".format(
-        headers=pp.pformat(result._delegate.headers)))
+    try:
+        result = future.result()
+    except Exception as e:            
+        #icm.EH_critical_exception(e)
+        result = None
 
-    icm.ANN_write("Operation Status: {result}".format(result=result))
+    if result:
+        icm.LOG_here("responseHeaders: {headers}".format(
+            headers=pp.pformat(result._delegate.headers)))
 
-    icm.ANN_write("Operation Result: {result}".format(
-        result=pp.pformat(result.json()))
-    )
+        icm.ANN_write("Operation Status: {result}".format(result=result))
+
+        icm.ANN_write("Operation Result: {result}".format(
+            result=pp.pformat(result.json()))
+        )
     
 
 
@@ -944,6 +949,14 @@ def ro_opInvokeCapture(
         roOp.opName,
         )
 
+    if not opBravadoObj:
+        icm.EH_problem_usageError(
+            """getOperationWithResourceAndOpName Failed: resource={resource} opName={opName}""".format(
+                resource=roOp.resource,
+                opName=roOp.opName,
+            ))
+        return None
+
     
     requestOptions = dict()
 
@@ -958,6 +971,7 @@ def ro_opInvokeCapture(
         urlParams = dict()
 
     bodyParams = params.bodyParams
+    icm.TM_here("{}".format(pp.pformat(bodyParams)))
     if bodyParams:
         #
         # With ** we achieve kwargs
@@ -995,7 +1009,7 @@ def ro_opInvokeCapture(
     try:
         result = future.result()
     except Exception as e:            
-        icm.EH_critical_exception(e)
+        #icm.EH_critical_exception(e)
         opResults = None
 
         roResults = ro.Ro_Results(

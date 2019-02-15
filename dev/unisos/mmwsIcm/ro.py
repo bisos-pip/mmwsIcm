@@ -295,7 +295,10 @@ class roListInv(icm.Cmnd):
 
             for thisRo in rosList:
                 invokedOp = roProc(thisRo)
-                opReport(invokedOp)
+                if invokedOp:
+                    opReport(invokedOp)
+                else:
+                    icm.EH_problem_usageError("ro_opInvokeCapture Failed")
 
             return
 

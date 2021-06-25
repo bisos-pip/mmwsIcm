@@ -41,7 +41,6 @@ _CommentEnd_
 ####+BEGIN: bx:dblock:ploneProc:bash:leavesList :types ""
 # {{{ DBLOCK-leavesList
 leavesList="
-dev
 "
 # }}} DBLOCK-leavesList
 ####+END:
@@ -51,12 +50,28 @@ _CommentBegin_
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || List       ::  Nodes List    [[elisp:(org-cycle)][| ]]
 _CommentEnd_
 
+#
+# For now ftoWalk is restricted to
+#
+
 ####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
 "
 # }}} DBLOCK-nodesList
 ####+END:
+
+####+BEGINNOT: bx:dblock:ploneProc:bash:nodesList :types ""
+# {{{ DBLOCK-nodesList
+nodesListPips="
+blee-pip
+unisos-pip
+roPerf-pip
+bisos-pip
+"
+# }}} DBLOCK-nodesList
+####+END:
+
 
 
 _CommentBegin_
@@ -77,34 +92,40 @@ _EOF_
 
 
 function pypiFtpWalks {
+    local pypiProcStartTemplate="/bisos/apps/defaults/software/starts/pypiProc.sh"
+    local ftoProcNodeStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh"
+    
     cat  << _EOF_
 $( examplesSeperatorChapter "ftpWalks: Uninstall" )
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgUnInstall sys
 $( examplesSeperatorChapter "PyPi AuxNode ftpWalks" )
 ftoProc.sh -v -n showRun -i treeRecurse runFunc pypiProc.sh -i distClean
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i distClean
-ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit /bystar/dist/venv/dev-py2-bisos-3
+ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit /bisos/venv/dev-py2-bisos-3
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit sys
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i clean ftoProc.sh pypiProc.sh
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i pkgedPrep ftoProc.sh pypiProc.sh
 $( examplesSeperatorChapter "Under Files Update" )
-ftoProc.sh -v -n showRun -i updateUnderFilesTo  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh ftoProc.sh
-ftoProc.sh -v -n showRun -i updateUnderFilesTo /libre/ByStar/InitialTemplates/software/starts/pypiProc.sh pypiProc.sh 
+ftoProc.sh -v -n showRun -i updateUnderFilesTo  ${ftoProcNodeStartTemplate} ftoProc.sh
+ftoProc.sh -v -n showRun -i updateUnderFilesTo  ${pypiProcStartTemplate} pypiProc.sh 
 _EOF_
  return
 }
 
 
 function templatesEvolution {
+    local ftoProcNodeStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh"
+    local panelStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/mainPanel.org"
+    
     cat  << _EOF_
 $( examplesSeperatorSection "ftoProc.sh -- Templates Evolution" )
-diff ./ftoProc.sh  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh
-cp ./ftoProc.sh  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh
-cp /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh ./ftoProc.sh  
+diff ./ftoProc.sh ${ftoProcNodeStartTemplate}
+cp ./ftoProc.sh ${ftoProcNodeStartTemplate}
+cp ${ftoProcNodeStartTemplate} ./ftoProc.sh  
 $( examplesSeperatorSection "commonPanel.org -- Templates Evolution" )
-diff ./Panel.org  /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org
-cp ./Panel.org /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org
-cp /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org ./Panel.org
+diff ./Panel.org  ${panelStartTemplate}
+cp ./Panel.org ${panelStartTemplate}
+cp ${panelStartTemplate} ./Panel.org
 _EOF_
  return
 }

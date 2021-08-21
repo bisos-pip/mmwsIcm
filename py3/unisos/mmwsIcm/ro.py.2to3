@@ -1,0 +1,27 @@
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored ./mmwsIcm/py3/unisos/mmwsIcm/ro.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./mmwsIcm/py3/unisos/mmwsIcm/ro.py
+--- ./mmwsIcm/py3/unisos/mmwsIcm/ro.py	(original)
++++ ./mmwsIcm/py3/unisos/mmwsIcm/ro.py	(refactored)
+@@ -77,7 +77,7 @@
+ import pprint
+ 
+ #from unisos.mmwsIcm import wsInvokerIcm
+-import wsInvokerIcm
++from . import wsInvokerIcm
+ 
+ ####+BEGIN: bx:dblock:python:section :title "Library Description (Overview)"
+ """
+@@ -153,7 +153,7 @@
+             argChoices.pop(0)
+             actions = argChoices
+         for each in actions:
+-            print each
++            print(each)
+             if interactive:
+                 #print( str( __doc__ ) )  # This is the Summary: from the top doc-string
+                 #version(interactive=True)

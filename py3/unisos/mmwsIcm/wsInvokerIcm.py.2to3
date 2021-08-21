@@ -1,0 +1,114 @@
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored ./mmwsIcm/py3/unisos/mmwsIcm/wsInvokerIcm.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./mmwsIcm/py3/unisos/mmwsIcm/wsInvokerIcm.py
+--- ./mmwsIcm/py3/unisos/mmwsIcm/wsInvokerIcm.py	(original)
++++ ./mmwsIcm/py3/unisos/mmwsIcm/wsInvokerIcm.py	(refactored)
+@@ -108,9 +108,9 @@
+ 
+ #import requests
+ import logging
+-import httplib
+-
+-from urlparse import urlparse
++import http.client
++
++from urllib.parse import urlparse
+ 
+ import ast
+ 
+@@ -200,7 +200,7 @@
+             argChoices.pop(0)
+             actions = argChoices
+         for each in actions:
+-            print each
++            print(each)
+             if interactive:
+                 #print( str( __doc__ ) )  # This is the Summary: from the top doc-string
+                 #version(interactive=True)
+@@ -573,7 +573,7 @@
+     #icmLogLevel = logControler.loggerGetLevel()  # Use This After ICM has been updated
+ 
+     def requestsDebugLog():
+-        httplib.HTTPConnection.debuglevel = 1
++        http.client.HTTPConnection.debuglevel = 1
+         #logging.basicConfig()
+         if icmLogLevel:
+             if icmLogLevel <= 10:
+@@ -671,13 +671,13 @@
+     else:
+         svcSpecStr = svcSpec
+         
+-    for res_name, res in spec.resources.items():
+-        for op_name, op in res.operations.items():
++    for res_name, res in list(spec.resources.items()):
++        for op_name, op in list(res.operations.items()):
+             name = get_command_name(op)
+ 
+             paramsListStr = ""
+             optionalOrRequired = ""
+-            for param_name, param in op.params.items():
++            for param_name, param in list(op.params.items()):
+                 if param.required:
+                     optionalOrRequired = "required_"
+                 else:
+@@ -690,7 +690,7 @@
+                 #print(param.type)                
+ 
+             #icm.OUT_note("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(
+-            print("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(            
++            print(("{thisIcm} --svcSpec={svcSpec} {perfSapStr} {headersStr} --resource={res_name} --opName={op_name} -i rinvoke {paramsListStr}".format(            
+                 thisIcm=thisIcm,
+                 svcSpec=svcSpecStr,
+                 perfSapStr=perfSapStr,
+@@ -699,7 +699,7 @@
+                 op_name=op_name,
+                 paramsListStr=paramsListStr,
+                 )
+-            )
++            ))
+                 
+                 
+ ####+BEGIN: bx:icm:python:func :funcName "getOperationWithResourceAndOpName" :funcType "anyOrNone" :retType "bool" :deco "default" :argsList "spec origin_url resource opName"
+@@ -721,11 +721,11 @@
+     spec = Spec.from_dict(spec, origin_url=origin_url)        
+     #pp.pprint(spec)
+     
+-    for res_name, res in spec.resources.items():
++    for res_name, res in list(spec.resources.items()):
+         if res_name != resource:
+             continue
+ 
+-        for op_name, op in res.operations.items():
++        for op_name, op in list(res.operations.items()):
+             if op_name != opName:
+                 continue
+             
+@@ -1073,7 +1073,7 @@
+ ####+END:
+     print(op)
+     
+-    print(op.svcSpec)
++    print((op.svcSpec))
+ 
+     cmndOutcome = wsInvokerIcm.rinvoke().cmnd(
+         interactive=False,
+@@ -1104,12 +1104,12 @@
+     prepared = req.prepare()
+     pretty_print_POST(prepared)
+     """
+-    print('{}\n{}\n{}\n\n{}'.format(
++    print(('{}\n{}\n{}\n\n{}'.format(
+         '-----------START-----------',
+         req.method + ' ' + req.url,
+-        '\n'.join('{}: {}'.format(k, v) for k, v in req.headers.items()),
++        '\n'.join('{}: {}'.format(k, v) for k, v in list(req.headers.items())),
+         req.body,
+-    ))
++    )))
+     
+     
+     

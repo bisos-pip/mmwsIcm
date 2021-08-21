@@ -77,7 +77,7 @@ you can run:
 
 ::
 
-    rinvokerPetstore.py
+   rinvokerPetstore.py
 
 Which will auto generate a complete list of all supported remote
 opperations in the Swagger Service Specification.
@@ -87,19 +87,19 @@ command-line, by executing for example:
 
 ::
 
-    rinvokerPetstore.py --svcSpec="http://petstore.swagger.io/v2/swagger.json" --resource="pet" --opName="getPetById"  -i rinvoke petId=1
+   rinvokerPetstore.py --svcSpec="http://petstore.swagger.io/v2/swagger.json" --resource="pet" --opName="getPetById"  -i rinvoke petId=1
 
 Which will produce something like:
 
 ::
 
-    Operation Status: 200 OK
-    Operation Result: {   u'category': {   u'id': 0, u'name': u'string'},
-        u'id': 1,
-        u'name': u'testsw',
-        u'photoUrls': [u'string'],
-        u'status': u'tttest',
-        u'tags': [{   u'id': 0, u'name': u'string'}]}
+   Operation Status: 200 OK
+   Operation Result: {   u'category': {   u'id': 0, u'name': u'string'},
+       u'id': 1,
+       u'name': u'testsw',
+       u'photoUrls': [u'string'],
+       u'status': u'tttest',
+       u'tags': [{   u'id': 0, u'name': u'string'}]}
 
 By turning on verbosity to level 15 (rinvokerPetstore.py -v 15) you can
 observe complete http traffic as reported by requests library.
@@ -115,49 +115,49 @@ To get a list of some example scenatios run:
 
 ::
 
-    opScnPetstore.py
+   opScnPetstore.py
 
 To run a particular example scenario, you can then run:
 
 ::
 
-    opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/unisos/mmwsIcm-base/opScn-1.py -i roListExpectations
+   opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/unisos/mmwsIcm-base/opScn-1.py -i roListExpectations
 
 Which will produce something like:
 
 ::
 
-    * ->:: @None@pet@getPetById
-    ** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
-    ** ->:: Header Params: None
-    ** ->:: Url Params: 
-    {   'petId': 1}
-    ** ->:: Body Params: None
-    * <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
-    ** <-:: Operation Result: 
-    {   u'category': {   u'id': 1, u'name': u'dog'},
-        u'id': 1,
-        u'name': u'Dog1',
-        u'photoUrls': [],
-        u'status': u'pending',
-        u'tags': []}
-    * ==:: SUCCESS
-    * XX:: Sleeping For 1 Second
-    * ->:: @None@pet@getPetById
-    ** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
-    ** ->:: Header Params: None
-    ** ->:: Url Params: 
-    {   'petId': 9999}
-    ** ->:: Body Params: None
-    * <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
-    ** <-:: Operation Result: 
-    {   u'category': {   u'id': 99, u'name': u'SAGScope'},
-        u'id': 9999,
-        u'name': u'doggie',
-        u'photoUrls': [u'string'],
-        u'status': u'available',
-        u'tags': [{   u'id': 99, u'name': u'SAGTags'}]}
-    * ==:: SUCCESS
+   * ->:: @None@pet@getPetById
+   ** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
+   ** ->:: Header Params: None
+   ** ->:: Url Params: 
+   {   'petId': 1}
+   ** ->:: Body Params: None
+   * <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
+   ** <-:: Operation Result: 
+   {   u'category': {   u'id': 1, u'name': u'dog'},
+       u'id': 1,
+       u'name': u'Dog1',
+       u'photoUrls': [],
+       u'status': u'pending',
+       u'tags': []}
+   * ==:: SUCCESS
+   * XX:: Sleeping For 1 Second
+   * ->:: @None@pet@getPetById
+   ** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
+   ** ->:: Header Params: None
+   ** ->:: Url Params: 
+   {   'petId': 9999}
+   ** ->:: Body Params: None
+   * <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
+   ** <-:: Operation Result: 
+   {   u'category': {   u'id': 99, u'name': u'SAGScope'},
+       u'id': 9999,
+       u'name': u'doggie',
+       u'photoUrls': [u'string'],
+       u'status': u'available',
+       u'tags': [{   u'id': 99, u'name': u'SAGTags'}]}
+   * ==:: SUCCESS
 
 Python Example Usage
 ====================
@@ -167,21 +167,21 @@ Invoker (Client) Development
 
 ::
 
-    from unisos.mmwsIcm import wsInvokerIcm
-    from unisos.mmwsIcm import ro
+   from unisos.mmwsIcm import wsInvokerIcm
+   from unisos.mmwsIcm import ro
 
 Testing Framework
 -----------------
 
 ::
 
-    from unisos.mmwsIcm import wsInvokerIcm
-    from unisos.mmwsIcm import ro
+   from unisos.mmwsIcm import wsInvokerIcm
+   from unisos.mmwsIcm import ro
 
 Performer (Server) Development
 ------------------------------
 
 ::
 
-    from unisos.mmwsIcm import wsInvokerIcm
-    from unisos.mmwsIcm import ro
+   from unisos.mmwsIcm import wsInvokerIcm
+   from unisos.mmwsIcm import ro

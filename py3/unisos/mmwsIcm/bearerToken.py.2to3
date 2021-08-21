@@ -1,0 +1,61 @@
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored ./mmwsIcm/py3/unisos/mmwsIcm/bearerToken.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./mmwsIcm/py3/unisos/mmwsIcm/bearerToken.py
+--- ./mmwsIcm/py3/unisos/mmwsIcm/bearerToken.py	(original)
++++ ./mmwsIcm/py3/unisos/mmwsIcm/bearerToken.py	(refactored)
+@@ -159,7 +159,7 @@
+             argChoices.pop(0)
+             actions = argChoices
+         for each in actions:
+-            print each
++            print(each)
+             if interactive:
+                 #print( str( __doc__ ) )  # This is the Summary: from the top doc-string
+                 #version(interactive=True)
+@@ -836,7 +836,7 @@
+         print(data)
+         
+     except Exception as e:
+-        print("file open failed for {fileName} -- skipping it".format(fileName=fileName))
++        print(("file open failed for {fileName} -- skipping it".format(fileName=fileName)))
+         return
+ 
+     decodedStr = base64.standard_b64decode(data[0])
+@@ -853,7 +853,7 @@
+ 
+     pp = pprint.PrettyPrinter(indent=4)    
+     pp.pprint(json1_data)
+-    print(json1_data['userInfo'])
++    print((json1_data['userInfo']))
+     userInfo = json1_data['userInfo']
+     pp.pprint(userInfo['userName'])
+ 
+@@ -980,19 +980,19 @@
+          icm.LOG_here(pp.pformat(userInfoDict))
+ 
+ 
+-         if 'userId' in userInfoDict.keys():
++         if 'userId' in list(userInfoDict.keys()):
+              self.setUserId(userInfoDict['userId'])
+                             
+-         if 'userName' in userInfoDict.keys():
++         if 'userName' in list(userInfoDict.keys()):
+              self.setUserName(userInfoDict['userName'])
+                               
+-         if 'role' in userInfoDict.keys():
++         if 'role' in list(userInfoDict.keys()):
+              self.setRole(userInfoDict['role'])
+                           
+-         if 'acGroups' in userInfoDict.keys():
++         if 'acGroups' in list(userInfoDict.keys()):
+              self.setResGroupIds(userInfoDict['acGroups'])
+                                  
+-         if 'serviceBlackList' in userInfoDict.keys():
++         if 'serviceBlackList' in list(userInfoDict.keys()):
+              self.setServiceBlackList(userInfoDict['serviceBlackList'])
+ 
+      def selfAsDict(self):

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """\
 *    *[Summary]* :: An =WsInvokerIcmExamples=: A starting point and an example for creating remote invokers (rinvokers).

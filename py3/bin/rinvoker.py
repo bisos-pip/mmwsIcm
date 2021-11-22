@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """\
 *    *[Summary]* :: An =WsIcmInvoker=: Given a swagger Service Specification, make all operations invokable from command line.

@@ -1,7 +1,0 @@
-RefactoringTool: Skipping optional fixer: buffer
-RefactoringTool: Skipping optional fixer: idioms
-RefactoringTool: Skipping optional fixer: set_literal
-RefactoringTool: Skipping optional fixer: ws_comma
-RefactoringTool: No changes to ./mmwsIcm/py3/unisos/mmwsIcm-base/opScn-1.py
-RefactoringTool: Files that need to be modified:
-RefactoringTool: ./mmwsIcm/py3/unisos/mmwsIcm-base/opScn-1.py

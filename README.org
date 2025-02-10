@@ -1,0 +1,293 @@
+#+title: bisos.mmWsCs: MM-WS-CS Library: Machine-to-Machine -- Web Services -- Command Services (CS) -- A
+set of facilities for developing Performer and Invoker web-services based on Swagger (Open-API) specifications through ICMs.
+
+#+DATE: <2024-02-19 Mon 16:27>
+#+AUTHOR: Mohsen BANAN
+#+OPTIONS: toc:4
+
+#+BEGIN: b:org:pypi:readme/topControls :pkgName "mmWsCs" :comment "basic"
+
+|----------------------+------------------------------------------------------------------|
+| ~Blee Panel Controls~: | [[elisp:(show-all)][Show-All]] : [[elisp:(org-shifttab)][Overview]] : [[elisp:(progn (org-shifttab) (org-content))][Content]] : [[elisp:(delete-other-windows)][(1)]] : [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]] : [[elisp:(save-buffer)][Save]]  : [[elisp:(kill-buffer)][Quit]]  : [[elisp:(bury-buffer)][Bury]] |
+| ~Panel Links~:         | [[file:./py3/panels/bisos.mmWsCs/_nodeBase_/fullUsagePanel-en.org][Repo Blee Panel]]                                                  |
+| ~See Also~:            | [[https://pypi.org/project/bisos.mmWsCs][At PYPI]] : [[https://github.com/bisos-pip/pycs][bisos.PyCS]]                                             |
+|----------------------+------------------------------------------------------------------|
+
+#+END:
+
+* Overview
+
+bisos.mmWsCs is a python package for BISOS Capabilities Bundles -- Abstraction, Specification and
+Materialization.
+
+
+#+BEGIN: b:org:pypi:readme/pkgDocumentation :pkgName "mmWsCs-cs" :comment "basic"
+
+# PYPI Documentation Comes Here in _description.org
+#+END:
+
+* Realted Resources
+
+| bisos Capabilities Panel | file:/py3/panels/capabilities/_nodeBase_/fullUsagePanel-en.org |
+|                          |                                                                |
+
+
+* Table of Contents     :TOC:
+- [[#overview][Overview]]
+- [[#realted-resources][Realted Resources]]
+- [[#installation][Installation]]
+  - [[#installation-with-pip][Installation With pip]]
+  - [[#installation-with-pipx][Installation With pipx]]
+  - [[#remote-invoker-rinvoker-svcpy-examples][Remote Invoker (rinvoker-svc.py) Examples]]
+  - [[#operation-scenario-opscn-svcpy-examples][Operation Scenario (opScn-svc.py) Examples]]
+- [[#--nonepetgetpetbyid][->:: @None@pet@getPetById]]
+  - [[#--svcspechttppetstoreswaggeriov2swaggerjson][->:: svcSpec=http://petstore.swagger.io/v2/swagger.json]]
+  - [[#--header-params-none][->:: Header Params: None]]
+  - [[#--url-params][->:: Url Params:]]
+  - [[#--body-params-none][->:: Body Params: None]]
+- [[#--httpstatus200----httptextok----resultsformatjson][<-:: httpStatus=200 -- httpText=OK -- resultsFormat=json]]
+  - [[#--operation-result][<-:: Operation Result:]]
+- [[#-success][==:: SUCCESS]]
+- [[#xx-sleeping-for-1-second][XX:: Sleeping For 1 Second]]
+- [[#--nonepetgetpetbyid-1][->:: @None@pet@getPetById]]
+  - [[#--svcspechttppetstoreswaggeriov2swaggerjson-1][->:: svcSpec=http://petstore.swagger.io/v2/swagger.json]]
+  - [[#--header-params-none-1][->:: Header Params: None]]
+  - [[#--url-params-1][->:: Url Params:]]
+  - [[#--body-params-none-1][->:: Body Params: None]]
+- [[#--httpstatus200----httptextok----resultsformatjson-1][<-:: httpStatus=200 -- httpText=OK -- resultsFormat=json]]
+  - [[#--operation-result-1][<-:: Operation Result:]]
+- [[#-success-1][==:: SUCCESS]]
+- [[#python-example-usage][Python Example Usage]]
+  - [[#invoker-client-development][Invoker (Client) Development]]
+  - [[#testing-framework][Testing Framework]]
+  - [[#performer-server-development][Performer (Server) Development]]
+- [[#part-of-bisos-and-bystar-----bystar-internet-services-operating-system][Part of BISOS and ByStar --- ByStar Internet Services Operating System]]
+- [[#bisosmmwscs-as-a-standalone-piece-of-bisos][bisos.mmWsCs as a Standalone Piece of BISOS]]
+- [[#documentation-and-blee-panels][Documentation and Blee-Panels]]
+  - [[#bisosmmwscs-blee-panels][bisos.mmWsCs Blee-Panels]]
+- [[#support][Support]]
+
+* Installation
+
+The sources for the  bisos.mmWsCs pip package is maintained at:
+https://github.com/bisos-pip/mmWsCs.
+
+The bisos.mmWsCs pip package is available at PYPI as
+https://pypi.org/project/bisos.mmWsCs
+
+You can install bisos.mmWsCs with pip or pipx.
+
+** Installation With pip
+
+If you need access to bisos.mmWsCs as a python module, you can install it with pip:
+
+#+begin_src bash
+pip install bisos.mmWsCs
+#+end_src
+
+** Installation With pipx
+
+If you only need access to bisos.mmWsCs as a command on command-line, you can install it with pipx:
+
+#+begin_src bash
+pipx install bisos.mmWsCs
+#+end_src
+
+The following commands are made available:
+- bin/rinvoker.py
+ A starting point template to be customized for your own swagger file.
+- bin/rinvokerPetstore.py
+ Provides a list of Petstore example command line invokations.
+-  bin/opScnPetstore.py
+  Points to various scenario files for the Petstore example.
+
+** Remote Invoker (rinvoker-svc.py) Examples
+
+For the example ``Pet Store Service'' at http://petstore.swagger.io/v2/swagger.json
+at command-line (or in bash) you can run:
+
+#+begin_src bash
+rinvokerPetstore.py
+#+end_src
+
+Which will auto generate a complete list of all supported remote opperations
+in the Swagger Service Specification.
+
+You can then invoke any of those remote operations from the command-line, by executing for example:
+
+#+begin_src bash
+rinvokerPetstore.py --svcSpec="http://petstore.swagger.io/v2/swagger.json" --resource="pet" --opName="getPetById"  -i rinvoke petId=1
+#+end_src
+
+Which will produce something like:
+
+#+begin_src bash
+Operation Status: 200 OK
+Operation Result: {   u'category': {   u'id': 0, u'name': u'string'},
+    u'id': 1,
+    u'name': u'testsw',
+    u'photoUrls': [u'string'],
+    u'status': u'tttest',
+    u'tags': [{   u'id': 0, u'name': u'string'}]}
+#+end_src
+
+By turning on verbosity to level 15 (rinvokerPetstore.py -v 15) you can observe
+complete  http traffic as reported by requests library.
+
+** Operation Scenario (opScn-svc.py) Examples
+
+For the example ``Pet Store Service'' at http://petstore.swagger.io/v2/swagger.json
+using python with RO\_ abstractions you can specify remote invokation and expectations.
+
+To get a list of some example scenatios run:
+
+#+begin_src bash
+opScnPetstore.py
+#+end_src
+
+To run a particular example scenario, you can then run:
+
+#+begin_src bash
+opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/unisos/mmwsIcm-base/opScn-1.py -i roListExpectations
+#+end_src
+
+
+Which will produce something like:
+
+#+begin_src bash
+* ->:: @None@pet@getPetById
+** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
+** ->:: Header Params: None
+** ->:: Url Params:
+{   'petId': 1}
+** ->:: Body Params: None
+* <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
+** <-:: Operation Result:
+{   u'category': {   u'id': 1, u'name': u'dog'},
+    u'id': 1,
+    u'name': u'Dog1',
+    u'photoUrls': [],
+    u'status': u'pending',
+    u'tags': []}
+* ==:: SUCCESS
+* XX:: Sleeping For 1 Second
+* ->:: @None@pet@getPetById
+** ->:: svcSpec=http://petstore.swagger.io/v2/swagger.json
+** ->:: Header Params: None
+** ->:: Url Params:
+{   'petId': 9999}
+** ->:: Body Params: None
+* <-:: httpStatus=200 -- httpText=OK -- resultsFormat=json
+** <-:: Operation Result:
+{   u'category': {   u'id': 99, u'name': u'SAGScope'},
+    u'id': 9999,
+    u'name': u'doggie',
+    u'photoUrls': [u'string'],
+    u'status': u'available',
+    u'tags': [{   u'id': 99, u'name': u'SAGTags'}]}
+* ==:: SUCCESS
+#+end_src
+
+* Python Example Usage
+
+** Invoker (Client) Development
+
+#+begin_src bash
+from unisos.mmwsIcm import wsInvokerIcm
+from unisos.mmwsIcm import ro
+#+end_src
+
+** Testing Framework
+
+#+begin_src bash
+from unisos.mmwsIcm import wsInvokerIcm
+from unisos.mmwsIcm import ro
+#+end_src
+
+** Performer (Server) Development
+
+#+begin_src bash
+from unisos.mmwsIcm import wsInvokerIcm
+from unisos.mmwsIcm import ro
+#+end_src
+
+
+* Part of BISOS and ByStar --- ByStar Internet Services Operating System
+
+Layered on top of Debian, *BISOS*: (By* Internet Services Operating System) is a
+unified and universal framework for developing both internet services and
+software-service continuums that use internet services. See [[https://github.com/bxGenesis/start][Bootstrapping
+ByStar, BISOS and Blee]] for information about getting started with BISOS.\\
+*BISOS* is a foundation for *The Libre-Halaal ByStar Digital Ecosystem* which is
+described as a cure for losses of autonomy and privacy in a book titled: [[https://github.com/bxplpc/120033][Nature
+of Polyexistentials]]
+
+/bisos.mmWsCs/ is part of BISOS.
+
+* bisos.mmWsCs as a Standalone Piece of BISOS
+
+bisos.mmWsCs is a standalone piece of BISOS. It can be used as a self-contained
+Python package separate from BISOS. Follow the installation and usage
+instructions below for your own use.
+
+
+* Documentation and Blee-Panels
+
+bisos.mmWsCs is part of ByStar Digital Ecosystem [[http://www.by-star.net]].
+
+This module's primary documentation is in the form of Blee-Panels.
+Additional information is also available in: [[http://www.by-star.net/PLPC/180047]]
+
+** bisos.mmWsCs Blee-Panels
+
+bisos.mmWsCs Blee-Panels are in ./panels directory.
+From within Blee and BISOS these panels are accessible under the
+Blee "Panels" menu.
+
+- Remote Operations Interactive Command Modules (RO-ICM) -- Best Current (2019) Practices For Web Services Development
+ http://www.by-star.net/PLPC/180056
+- A Generalized Swagger (Open-API) Centered Web Services Testing Framework http://www.by-star.net/PLPC/180057
+- Interactive Command Modules (ICM) and Players http://www.by-star.net/PLPC/180050
+
+On the invoker side, a Swagger (Open-API) specification is
+digested with bravado and is mapped to command line with ICM.
+
+On the performer side, a Swagger (Open-API) specification is used with
+the code-generator to create a consistent starting point.
+
+An ICM can be auto-converted to become a web service.
+
+
+* Support
+
+For support, criticism, comments and questions; please contact the
+author/maintainer\\
+[[http://mohsen.1.banan.byname.net][Mohsen Banan]] at:
+[[http://mohsen.1.banan.byname.net/contact]]
+
+
+# ###+BEGIN: blee:bxPanel:footerOrgParams :panelType "readme"
+#+STARTUP: overview
+#+STARTUP: lognotestate
+#+STARTUP: inlineimages
+#+SEQ_TODO: TODO WAITING DELEGATED | DONE DEFERRED CANCELLED
+#+TAGS: @desk(d) @home(h) @work(w) @withInternet(i) @road(r) call(c) errand(e)
+#+CATEGORY: U:mmWsCs
+
+# ###+END:
+
+# ###+BEGIN: blee:bxPanel:footerEmacsParams :primMode "org-mode" :panelType "readme"
+# Local Variables:
+# eval: (setq-local toc-org-max-depth 4)
+# eval: (setq-local ~selectedSubject "noSubject")
+# eval: (setq-local ~primaryMajorMode 'org-mode)
+# eval: (setq-local ~blee:panelUpdater nil)
+# eval: (setq-local ~blee:dblockEnabler nil)
+# eval: (setq-local ~blee:dblockController "interactive")
+# eval: (img-link-overlays)
+# eval: (set-fill-column 115)
+# eval: (blee:fill-column-indicator/enable)
+# eval: (bx:load-file:ifOneExists "./panelActions.el")
+# End:
+
+# ###+END

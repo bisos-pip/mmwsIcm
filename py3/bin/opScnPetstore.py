@@ -75,7 +75,7 @@ G.icmCmndsLibsAppend = __file__
 
 ####+END:
 
-from blee.icmPlayer import bleep
+from bisos.csPlayer import bleep
 
 from unisos.mmwsIcm import wsInvokerIcm
 from unisos.mmwsIcm import ro
@@ -332,7 +332,7 @@ class examples(icm.Cmnd):
         
         icm.G_commonBriefExamples()
 
-        bleep.examples_icmBasic()
+        bleep.examples_csBasic()
 
 
         icm.cmndExampleMenuChapter('*Scenarios Selection*')

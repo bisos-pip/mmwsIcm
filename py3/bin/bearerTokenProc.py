@@ -75,7 +75,7 @@ G.icmCmndsLibsAppend = __file__
 
 ####+END:
 
-from blee.icmPlayer import bleep
+from bisos.csPlayer import bleep
 
 from unisos.mmwsIcm  import bearerToken
 
@@ -319,7 +319,7 @@ class examples(icm.Cmnd):
         
         icm.G_commonBriefExamples()
 
-        bleep.examples_icmBasic()
+        bleep.examples_csBasic()
 
         bearerToken.examples_tokenGenerator("NAME", "ROLES", "GROUPS")
 

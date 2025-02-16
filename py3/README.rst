@@ -188,7 +188,7 @@ To run a particular example scenario, you can then run:
 
 .. code:: bash
 
-   opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/unisos/mmwsIcm-base/opScn-1.py -i roListExpectations
+   opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/bisos/mmwsIcm-base/opScn-1.py -i roListExpectations
 
 Which will produce something like:
 
@@ -234,24 +234,24 @@ Invoker (Client) Development
 
 .. code:: bash
 
-   from unisos.mmwsIcm import wsInvokerIcm
-   from unisos.mmwsIcm import ro
+   from bisos.mmwsIcm import wsInvokerIcm
+   from bisos.mmwsIcm import ro
 
 Testing Framework
 -----------------
 
 .. code:: bash
 
-   from unisos.mmwsIcm import wsInvokerIcm
-   from unisos.mmwsIcm import ro
+   from bisos.mmwsIcm import wsInvokerIcm
+   from bisos.mmwsIcm import ro
 
 Performer (Server) Development
 ------------------------------
 
 .. code:: bash
 
-   from unisos.mmwsIcm import wsInvokerIcm
-   from unisos.mmwsIcm import ro
+   from bisos.mmwsIcm import wsInvokerIcm
+   from bisos.mmwsIcm import ro
 
 Part of BISOS and ByStar — ByStar Internet Services Operating System
 ====================================================================

@@ -1,22 +1,11 @@
 #!/bin/bash
 
-####+BEGIN: bx:bash:top-of-file :vc "cvs" partof: "bystar" :copyleft "halaal+minimal"
-### Args: :control "enabled|disabled|hide|release|fVar"  :vc "cvs|git|nil" :partof "bystar|nil" :copyleft "halaal+minimal|halaal+brief|nil"
-typeset RcsId="$Id: dblock-iim-bash.el,v 1.4 2017-02-08 06:42:32 lsipusr Exp $"
-# *CopyLeft*
-__copying__="
-* Libre-Halaal Software"
-#  This is part of ByStar Libre Services. http://www.by-star.net
-#  This is a Halaal Poly-Existential. See http://www.freeprotocols.org
-
-####+END:
-
-####+BEGIN: bx:bsip:bash:seed-spec :types  "seedFtoCommon.sh"
+####+BEGIN: bx:bsip:bash:seed-spec :types "seedFtoCommon.sh"
 SEED="
 *  /[dblock]/ /Seed/ :: [[file:/bisos/core/bsip/bin/seedFtoCommon.sh]] |
 "
 FILE="
-*  /This File/ :: /bisos/git/bxRepos/bisos-pip/mmwsIcm/py3/panels/bisos.mmwsIcm/README/ftoProc.sh
+*  /This File/ :: /l/pip/mmwsIcm/py3/panels/bisos.mmwsIcm/README/ftoProc.sh
 "
 if [ "${loadFiles}" == "" ] ; then
     /bisos/core/bsip/bin/seedFtoCommon.sh -l $0 "$@"
@@ -24,26 +13,25 @@ if [ "${loadFiles}" == "" ] ; then
 fi
 ####+END:
 
+seedExamplesType="pypi"
 
-_CommentBegin_
-*  [[elisp:(org-cycle)][| ]]  [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || Cmnd       ::  examplesHookPostExample    [[elisp:(org-cycle)][| ]]
-_CommentEnd_
+leavesExcludes=""
 
-function examplesHookPost {
-    cat  << _EOF_
-$( examplesSeperatorTopLabel "EXTENSION EXAMPLES" )
-$( examplesSeperatorSection "commonProc.sh -- Templates Evolution" )
-diff ./commonProc.sh  /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonProcLeaf.sh
-cp  ./commonProc.sh  /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonProcLeaf.sh
-cp /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonProcLeaf.sh ./commonProc.sh  
-$( examplesSeperatorSection "commonPanel.org -- Templates Evolution" )
-diff ./commonPanel.org  /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonPanel.org
-cp ./commonPanel.org /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonPanel.org
-cp /bisos/apps/defaults/start/fto/commonProc/anyFtoItem/commonPanel.org ./commonPanel.org
-_EOF_
- return
-}
+leavesOrdered=""
 
+nodesExcludes=""
+
+nodesOrdered=""
+
+####+BEGIN: bx:dblock:pypi:bash:leavesList :types ""
+leavesList="
+"
+####+END:
+
+####+BEGIN: bx:dblock:pypi:bash:nodesList :types ""
+nodesList="
+"
+####+END:
 
 ####+BEGIN: bx:dblock:bash:end-of-file :types ""
 _CommentBegin_

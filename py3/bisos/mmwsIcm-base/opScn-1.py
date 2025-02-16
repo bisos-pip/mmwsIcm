@@ -3,11 +3,11 @@
     rosList creates a list of Ro_Op-s which are to be invoked/validated/etc.
 """
 
-from unisos.mmwsIcm import ro
+from bisos.mmwsIcm import ro
 
 # import opScnCommon   # is a better way of doing it when  you have multiple scn files.
 
-from unisos import icm
+# from uni sos import icm
 
 import time
 
@@ -21,12 +21,12 @@ def verify_petstoreSvcCommonRo(opExpectation):
     roOp = opExpectation.roOp
     opResults = roOp.roResults
     if opResults.httpResultCode < 400:
-        icm.ANN_write("* ==:: SUCCESS")
+        b_io.ann.write("* ==:: SUCCESS")
     else:
-        icm.ANN_write("* ==:: FAILED")
+        b_io.ann.write("* ==:: FAILED")
 
 def sleep1Sec(opExpectation):
-    icm.ANN_write("* XX:: Sleeping For 1 Second")    
+    b_io.ann.write("* XX:: Sleeping For 1 Second")    
     time.sleep(1)
          
 

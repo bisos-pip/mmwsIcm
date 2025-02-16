@@ -141,7 +141,7 @@ opScnPetstore.py
 To run a particular example scenario, you can then run:
 
 #+begin_src bash
-opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/unisos/mmwsIcm-base/opScn-1.py -i roListExpectations
+opScnPetstore.py  --load /tmp/py2v1/local/lib/python2.7/site-packages/bisos/mmwsIcm-base/opScn-1.py -i roListExpectations
 #+end_src
 
 
@@ -186,22 +186,22 @@ Which will produce something like:
 ** Invoker (Client) Development
 
 #+begin_src bash
-from unisos.mmwsIcm import wsInvokerIcm
-from unisos.mmwsIcm import ro
+from bisos.mmwsIcm import wsInvokerIcm
+from bisos.mmwsIcm import ro
 #+end_src
 
 ** Testing Framework
 
 #+begin_src bash
-from unisos.mmwsIcm import wsInvokerIcm
-from unisos.mmwsIcm import ro
+from bisos.mmwsIcm import wsInvokerIcm
+from bisos.mmwsIcm import ro
 #+end_src
 
 ** Performer (Server) Development
 
 #+begin_src bash
-from unisos.mmwsIcm import wsInvokerIcm
-from unisos.mmwsIcm import ro
+from bisos.mmwsIcm import wsInvokerIcm
+from bisos.mmwsIcm import ro
 #+end_src
 
 

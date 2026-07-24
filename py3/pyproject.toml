@@ -2,7 +2,7 @@
 ####+BEGIN: b:py3:pypi:setup/projectToml :comment "" :setuptoolsVer nil
 
 [build-system]
-requires = ["setuptools==75.8.0"]
+requires = ["setuptools==83.0.0"]
 build-backend = "setuptools.build_meta"
 
 ####+END:
